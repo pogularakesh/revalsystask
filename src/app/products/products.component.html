@@ -1,0 +1,28 @@
+<select  (change)="selected($event.target.value)">
+  <option>Please select Brand Name </option>
+  <option value="{{ap.BrandName}}" *ngFor="let ap of arrProducts">{{ap.BrandName}}</option>
+</select>
+
+<select (change)="selected1($event.target.value)">
+  <option>Please select a Product type </option>
+  <option value="{{ap.ProductType}}" *ngFor="let ap of products">{{ap.ProductType}}</option>
+</select>
+
+
+<div *ngFor="let ap of models">
+{{ap.ModelNumber}}
+{{ap.ModelName}}
+
+</div>
+
+<hr>
+
+
+<div>
+  <input type="checkbox" name="product" value="tv" (change)="onClick($event.target)">TV
+</div>
+
+
+<a routerLink="/feedback">Please Rate Us</a>
+<p><a [routerLink]="['/login']">Logout</a></p>
+

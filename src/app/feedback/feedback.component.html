@@ -1,0 +1,35 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
+        <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+            <div *ngIf="f.Name.errors.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+        <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+            <div *ngIf="f.Email.errors.required">Email is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input type="text" formControlName="Phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Phone.errors }" />
+        <div *ngIf="submitted && f.Phone.errors" class="invalid-feedback">
+            <div *ngIf="f.Phone.errors.required">Phone is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Feedback">Feedback</label>
+        <textarea type="textarea" formControlName="Feedback" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Feedback.errors }">
+        <div *ngIf="submitted && f.Feedback.errors" class="invalid-feedback">
+            <div *ngIf="f.Feedback.errors.required">Feedback is required</div>
+        </div>
+        </textarea>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Submit</button>
+       
+    </div>
+</form>
